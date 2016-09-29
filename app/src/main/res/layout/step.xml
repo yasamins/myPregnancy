@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today&apos;s activities"
+        android:id="@+id/textView13"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="65dp"
+        android:layout_marginTop="57dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="703dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="301dp"
+        android:textSize="30sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="       Steps"
+        android:id="@+id/textView14"
+        android:layout_marginTop="144dp"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_marginStart="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="561dp"
+        android:textSize="30sp"
+        android:textColor="#6A1B9A" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="      1194"
+        android:id="@+id/textView15"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_marginTop="94dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="461dp"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="62dp"
+        android:textSize="32sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="     Distance"
+        android:id="@+id/textView16"
+        android:textSize="30sp"
+        android:textColor="#6A1B9A"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textView15" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="       4Km"
+        android:id="@+id/textView17"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="265dp"
+        android:textSize="32sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="    Total time"
+        android:id="@+id/textView18"
+        android:layout_alignTop="@+id/textView17"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="89dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="188dp"
+        android:layout_alignStart="@+id/textView17"
+        android:textColor="#6A1B9A"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="      35min"
+        android:id="@+id/textView19"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/textView18"
+        android:layout_marginBottom="73dp"
+        android:layout_alignTop="@+id/textView18"
+        android:layout_marginTop="120dp"
+        android:layout_alignStart="@+id/textView18"
+        android:textSize="32sp"
+        android:textColor="#000000" />
+</RelativeLayout>
