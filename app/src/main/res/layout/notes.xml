@@ -4,66 +4,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B2EBF2"
+    android:background="@drawable/eatingstyle"
     android:weightSum="1"
     tools:context="com.example.yasi27.final2.MainActivity3">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToDo notes"
+        android:text="Useful Articles"
         android:id="@+id/textView"
         android:layout_marginTop="62dp"
-        android:textSize="36sp"
-        android:textColor="#006064"
+        android:textSize="44sp"
+        android:textColor="#FF7043"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
-    <TextView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="note1"
-        android:id="@+id/textView3"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="516dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="62dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="65dp"
+        android:id="@+id/listView"
         android:layout_below="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:textSize="30sp" />
+        android:layout_marginTop="87dp"
+        android:dividerHeight="10.0sp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="note2"
-        android:id="@+id/textView4"
-        android:layout_marginBottom="312dp"
-        android:layout_marginTop="191dp"
-        android:layout_alignEnd="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_alignTop="@+id/textView3"
-        android:background="#FFFFFF"
-        android:textSize="30sp"
-        android:layout_alignParentBottom="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="note3"
-        android:id="@+id/textView5"
-        android:layout_marginBottom="97dp"
-        android:layout_marginTop="204dp"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:textSize="30sp" />
 
 </RelativeLayout>

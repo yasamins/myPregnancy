@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
+//    TextView countdown;
     Button button;
 
 
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month + 1, day);
-//        Getstarted();
 
 
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Roboto-Bold.ttf");
@@ -85,26 +85,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
-//    public void Getstarted(){
-//        start.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View v) {
-//                        //now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
-//                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
-//                        if (isInserted = true)
-//                            Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
-//                        else
-//                            Toast.makeText(MainActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//        );
-
-//    }
-
-
-
     public void OnClickListener(){
 
         button = (Button)findViewById(R.id.button);
@@ -112,14 +92,32 @@ public class MainActivity extends AppCompatActivity
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-                        //now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
-                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
-                        if (isInserted = true)
+
+                        String sUsername = editText.getText().toString();
+                        String dDate = dateView.getText().toString();
+                        if (sUsername.matches("") || dDate.matches("")) {
+                            Toast.makeText(MainActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+                            return;
+
+
+                        } else {
                             Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(MainActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
-                        startActivity(intent);
+                            Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
+                            startActivity(intent);
+                        }
+
+
+
+//                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
+//                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
+//                        if (isInserted == true)
+//                            Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
+//                        else
+//                            Toast.makeText(MainActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
+//                        Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
+//                        startActivity(intent);
+//                        countdown.setText(year+"-"+month+"-"+day);
+
                     }
                 }
         );
@@ -158,9 +156,6 @@ public class MainActivity extends AppCompatActivity
         dateView.setText(new StringBuilder().append(day).append("/")
                 .append(month).append("/").append(year));
     }
-
-
-
 
     @Override
     public void onBackPressed() {
