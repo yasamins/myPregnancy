@@ -103,6 +103,10 @@ public class MainActivity extends AppCompatActivity
                         } else {
                             Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
+//                            intent.putExtra("day",day);
+//                            intent.putExtra("month", month);
+//                            intent.putExtra("year", year);
+//                            intent.putExtra("dDate", dDate);
                             startActivity(intent);
                         }
 

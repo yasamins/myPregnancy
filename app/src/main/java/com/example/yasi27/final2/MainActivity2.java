@@ -38,17 +38,30 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
         bellysize.setOnClickListener(this);
         appointment = (Button)findViewById(R.id.appointment);
         appointment.setOnClickListener(this);
-//        countdown = (TextView)findViewById(R.id.countdown);
-
-//        Bundle extras = getIntent().getExtras();
 //
+//        Bundle extras = getIntent().getExtras();
+//        String newString = extras.getString("dDate");
+//        countdown.setText(newString);
+
+//
+//        countdown = (TextView)findViewById(R.id.countdown);
+//
+//        Bundle extras = getIntent().getExtras();
+////
 //        int year = extras.getInt("year");
 //        int month = extras.getInt("month");
 //        int day = extras.getInt("day");
+//        countdown.setText(year + month + day);
 
 //        String dateSet = dateData.getString("Date");
 //        countdown.setText(year +  month + day );
 //        OnClickListener();
+
+//        int day = extras.getInt("day");
+//        int month =extras.getInt("month");
+//        int year = extras.getInt("year");
+//        countdown.setText( new StringBuilder().append(day).append("/")
+//                .append(month).append("/").append(year));
 
     }
     public void onClick(View v){
