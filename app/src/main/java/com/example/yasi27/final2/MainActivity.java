@@ -1,5 +1,4 @@
 package com.example.yasi27.final2;
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -26,7 +25,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    DatabaseHelper myDb;
+    DbHelper myDb;
     EditText editText;
     Button start;
     private DatePicker datePicker;
@@ -36,12 +35,11 @@ public class MainActivity extends AppCompatActivity
 //    TextView countdown;
     Button button;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDb = new DatabaseHelper(this);
+        myDb = new DbHelper(this);
         //its going to call the constructor of this databasehelper class and in the contructor we are creating the database and the tables
         OnClickListener();
 
@@ -89,38 +87,30 @@ public class MainActivity extends AppCompatActivity
 
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
+//                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
+//                        boolean isInserted = myDb.insertData(editText.getText().toString(), dateView.getText().toString());
+                        boolean isInserted = myDb.insertData(editText.getText().toString() , dateView.getText().toString() , "" , "");
+                        System.out.println("save result :" + isInserted);
                         String sUsername = editText.getText().toString();
                         String dDate = dateView.getText().toString();
                         if (sUsername.matches("") || dDate.matches("")) {
                             Toast.makeText(MainActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+
                             return;
 
 
                         } else {
                             Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
-//                            intent.putExtra("day",day);
-//                            intent.putExtra("month", month);
-//                            intent.putExtra("year", year);
-//                            intent.putExtra("dDate", dDate);
+                            intent.putExtra("username", editText.getText().toString());
+                            intent.putExtra("duedate", dateView.getText().toString());
                             startActivity(intent);
                         }
-
-
-
-//                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
-//                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
-//                        if (isInserted == true)
-//                            Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
-//                        else
-//                            Toast.makeText(MainActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
-//                        startActivity(intent);
-//                        countdown.setText(year+"-"+month+"-"+day);
+//
 
                     }
                 }

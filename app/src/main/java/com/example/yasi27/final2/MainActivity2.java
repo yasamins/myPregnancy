@@ -3,41 +3,52 @@ package com.example.yasi27.final2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Date;
+import java.sql.SQLOutput;
 
 /**
  * Created by yasi27 on 26.9.2016.
  */
 public class MainActivity2 extends Activity implements View.OnClickListener{
-    public static final int WEEKS_IN_PREGNANCY = 40;
-    public static final int DAYS_IN_PREGNNCY = WEEKS_IN_PREGNANCY * 7;
+
     TextView countdown;
     Button notes;
     Button weight;
     Button bellysize;
+    Button myweight;
+    EditText editText;
+    private TextView dateView;
+
     Button appointment;
     private int year, month, day;
 
+    String username;
+    String duedate;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.front);
-
+        editText = (EditText)findViewById(R.id.editText);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+//        Intent intent1 = getIntent();
+        duedate = intent.getStringExtra("duedate");
+        System.out.println("username is " + username);
+        System.out.println("duedateis : "+ duedate);
         notes = (Button)findViewById(R.id.notes);
         notes.setOnClickListener(this);
         bellysize = (Button)findViewById(R.id.bellysize);
         bellysize.setOnClickListener(this);
-        appointment = (Button)findViewById(R.id.appointment);
-        appointment.setOnClickListener(this);
+        myweight = (Button) findViewById(R.id.myweight);
+        myweight.setOnClickListener(this);
+
 //
 //        Bundle extras = getIntent().getExtras();
 //        String newString = extras.getString("dDate");
@@ -57,11 +68,6 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
 //        countdown.setText(year +  month + day );
 //        OnClickListener();
 
-//        int day = extras.getInt("day");
-//        int month =extras.getInt("month");
-//        int year = extras.getInt("year");
-//        countdown.setText( new StringBuilder().append(day).append("/")
-//                .append(month).append("/").append(year));
 
     }
     public void onClick(View v){
@@ -76,32 +82,14 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
                 startActivity(i);
                 break;
 
-            case R.id.appointment:
-                Intent intentapn = new Intent("com.example.yasi27.final2.appointment");
+            case R.id.myweight:
+                Intent intentapn = new Intent("com.example.yasi27.final2.Weight");
+                intentapn.putExtra("username", username);
+                intentapn.putExtra("duedate", duedate);
                 startActivity(intentapn);
                 break;
         }
     }
-
-
-//    public void OnClickListener(){
-//
-//        notes = (Button)findViewById(R.id.notes);
-//        notes.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent("com.example.yasi27.final2.MainActivity3");
-//                        startActivity(intent);
-//                    }
-//                }
-//
-//        );
-//
-//
-//    }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
