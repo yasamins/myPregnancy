@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import java.util.Calendar;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,7 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+public class NewUserActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     DatabaseHelper myDb;
@@ -64,17 +63,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -96,13 +84,13 @@ public class MainActivity extends AppCompatActivity
                         String sUsername = editText.getText().toString();
                         String dDate = dateView.getText().toString();
                         if (sUsername.matches("") || dDate.matches("")) {
-                            Toast.makeText(MainActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(NewUserActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
                             return;
 
 
                         } else {
-                            Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
+                            Toast.makeText(NewUserActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent("com.example.yasi27.final2.HomeActivity");
 //                            intent.putExtra("day",day);
 //                            intent.putExtra("month", month);
 //                            intent.putExtra("year", year);
@@ -115,10 +103,10 @@ public class MainActivity extends AppCompatActivity
 //                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
 //                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
 //                        if (isInserted == true)
-//                            Toast.makeText(MainActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(NewUserActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
 //                        else
-//                            Toast.makeText(MainActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent("com.example.yasi27.final2.MainActivity2");
+//                            Toast.makeText(NewUserActivity.this,"Data not saved", Toast.LENGTH_LONG).show();
+//                        Intent intent = new Intent("com.example.yasi27.final2.HomeActivity");
 //                        startActivity(intent);
 //                        countdown.setText(year+"-"+month+"-"+day);
 

@@ -6,4 +6,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="metawear_text_size">23dp</dimen>
+    <dimen name="heart_rate_title_text_size">30.5dp</dimen>
+    <dimen name="metawear_connection_status_text_size">16dp</dimen>
+    <dimen name="metawear_heart_rate_value">60dp</dimen>
+    <dimen name="metawear_heart_rate_bpm_label">37dp</dimen>
 </resources>

@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 /**
  * Created by yasi27 on 30.9.2016.
  */
-public class bellysize extends Activity {
+public class BellyImageActivity extends Activity {
 
     Button button4;
     ImageView photo;
@@ -23,7 +22,7 @@ public class bellysize extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bellysize);
+        setContentView(R.layout.activity_belly_image);
 
         button4 = (Button) findViewById(R.id.button4);
         photo = (ImageView) findViewById(R.id.photo);

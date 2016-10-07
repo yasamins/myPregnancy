@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,13 +14,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by yasi27 on 27.9.2016.
  */
-public class MainActivity3 extends Activity {
+public class ArticlesActivity extends Activity {
     String[] articles = {
             "What to eat during pregnancy",
             "5 best exercises during pregnancy",
@@ -41,7 +36,7 @@ public class MainActivity3 extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.notes);
+        setContentView(R.layout.activity_articles);
 
         ListView listView = (ListView) findViewById(R.id.listView);
 

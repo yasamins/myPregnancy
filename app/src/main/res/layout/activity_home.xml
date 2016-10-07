@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.yasi27.final2.HomeActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendar"
+        android:background="@drawable/calendar1"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/countdown"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="73dp"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/appointment"
+        android:layout_toEndOf="@+id/articles" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heartRate"
+        android:background="@drawable/heart_rate"
+        android:layout_above="@+id/appointment"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="29dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="   Days left"
+        android:id="@+id/textView20"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#0D47A1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bellyImage"
+        android:background="@drawable/bellysizee"
+        android:layout_above="@+id/countdown"
+        android:layout_alignStart="@+id/articles" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weight"
+        android:background="@drawable/scale2"
+        android:layout_marginBottom="32dp"
+        android:layout_alignBottom="@+id/articles"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/articles"
+        android:background="@drawable/note"
+        android:layout_marginTop="103dp"
+        android:layout_below="@+id/textView20"
+        android:layout_toStartOf="@+id/textView20"
+        android:layout_marginEnd="15dp" />
+
+
+</RelativeLayout>

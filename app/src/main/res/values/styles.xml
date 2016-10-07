@@ -2,7 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -16,5 +15,42 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="Home">
+
+    </style>
+
+    <style name="HeartRate">
+
+    </style>
+
+    <style name="metawearTitle">
+        <item name="android:textSize">@dimen/metawear_text_size</item>
+        <item name="android:textColor">@color/infoTextColor</item>
+    </style>
+
+    <style name="metawearConnectionStatus">
+        <item name="android:textSize">@dimen/metawear_connection_status_text_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/infoTextColor</item>
+    </style>
+
+    <style name="heartRateTitle" parent="metawearTitle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/heart_rate_title_text_size</item>
+    </style>
+
+    <style name="heartRateValue" parent="metawearTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/metawear_heart_rate_value</item>
+    </style>
+
+    <style name="heartRateBPM" parent="metawearTitle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/metawear_heart_rate_bpm_label</item>
+    </style>
 
 </resources>

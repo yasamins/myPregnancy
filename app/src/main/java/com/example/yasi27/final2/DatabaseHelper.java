@@ -14,7 +14,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "pregnant.db";
     public static final String TABLE_NAME = "pregnant_table";
     public static final String COL_1 = "USERNAME";
-    public static final String COL_2 = "DUEDATE";
+    public static final String COL_2 = "DUE_DATE";
+    public static final String COL_3 = "WEIGHT";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -24,7 +25,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + " (USERNAME TEXT, DUEDATE INTEGER) ");
+//        due_date type: integer/date?
+        db.execSQL("create table " + TABLE_NAME + " (USERNAME TEXT, DUE_DATE DATE, WEIGHT FLOAT) ");
         //it execute whatever query you pass inside this method as an argument
 
     }
@@ -36,12 +38,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean inserData(String username, String duedate) {
+    public boolean inserData(String username, String duedate, String weight) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         //now we are going to use this contentvalue instance and put data in the columns. it takes 2 arg: column name which you want to inser data and the value
         contentValues.put(COL_1, username);
         contentValues.put(COL_2, duedate);
+        contentValues.put(COL_3, weight);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
             return false;

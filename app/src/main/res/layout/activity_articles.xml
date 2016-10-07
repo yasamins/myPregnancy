@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/eatingstyle"
     android:weightSum="1"
-    tools:context="com.example.yasi27.final2.MainActivity3">
+    tools:context="com.example.yasi27.final2.ArticlesActivity">
 
     <TextView
         android:layout_width="wrap_content"
