@@ -30,7 +30,7 @@
             android:layout_height="65dp"
             android:layout_alignParentLeft="true"
             android:focusableInTouchMode="false"
-            android:src="@drawable/board" />
+            android:src="@drawable/metawear_board" />
 
 
         <TextView
@@ -97,7 +97,7 @@
         android:layout_gravity="center"
         android:layout_weight=".46"
         android:focusableInTouchMode="false"
-        android:src="@drawable/heart_healthy" />
+        android:src="@drawable/heart_rate_bkg" />
 
     <LinearLayout
         android:layout_width="match_parent"

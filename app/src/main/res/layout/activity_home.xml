@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -9,72 +10,87 @@
     tools:context="com.example.yasi27.final2.HomeActivity">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendar"
-        android:background="@drawable/calendar1"/>
-
-
-
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/countdown"
-        android:layout_marginBottom="27dp"
-        android:layout_marginStart="73dp"
-        android:textStyle="bold"
-        android:layout_alignBottom="@+id/appointment"
-        android:layout_toEndOf="@+id/articles" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/heartRate"
-        android:background="@drawable/heart_rate"
-        android:layout_above="@+id/appointment"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="29dp" />
+        <TextView
+            android:text="There Are"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:id="@+id/dayCountDown1"
+            android:textAlignment="center"
+            android:textSize="60sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="   Days left"
-        android:id="@+id/textView20"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#0D47A1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/countdown"
+            android:textStyle="bold"
+            android:layout_marginBottom="34dp"
+            android:text="12"
+            android:textAlignment="center"
+            android:textSize="60sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bellyImage"
-        android:background="@drawable/bellysizee"
-        android:layout_above="@+id/countdown"
-        android:layout_alignStart="@+id/articles" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Days Left"
+            android:id="@+id/dayCountDown2"
+            android:textSize="60sp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginBottom="12dp"
+            android:textAlignment="center" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/weight"
-        android:background="@drawable/scale2"
-        android:layout_marginBottom="32dp"
-        android:layout_alignBottom="@+id/articles"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/articles"
-        android:background="@drawable/note"
-        android:layout_marginTop="103dp"
-        android:layout_below="@+id/textView20"
-        android:layout_toStartOf="@+id/textView20"
-        android:layout_marginEnd="15dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/heartRate"
+                    android:background="@drawable/heart_rate_button"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/weight"
+                    android:background="@drawable/scale_button"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/calendar"
+                    android:background="@drawable/calendar_button"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/articles"
+                    android:background="@drawable/note_button"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

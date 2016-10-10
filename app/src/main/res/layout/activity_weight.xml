@@ -131,7 +131,7 @@
         android:layout_alignStart="@+id/textView11"
         android:layout_alignEnd="@+id/button3"
         android:layout_alignBottom="@+id/textView6"
-        android:background="@drawable/mybelly"
+        android:background="@drawable/weight_bkg"
         android:layout_alignParentTop="true"
         android:layout_marginTop="89dp" />
 </RelativeLayout>

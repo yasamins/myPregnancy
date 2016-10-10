@@ -27,6 +27,7 @@ public class HeartRateSensorFragment extends Fragment {
     private MetaWearBoard metaWearBoard;
     private Gpio gpio;
     private final byte GPIO_PIN = 0;
+    private final byte POWER_PIN = 1;
     private final String HEART_RATE = "heart_rate";
     private final int SCAN_INTERVAL = 50;
     private int sampleCounter;

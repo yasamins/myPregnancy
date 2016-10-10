@@ -36,5 +36,6 @@
     <string name="toast_disconnected">MetaWear Disconnected</string>
     <string name="pairing_text">Do you see a blinking blue LED on the MetaWear?</string>
     <string name="error_soft_reset">Error resetting board</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 
 </resources>

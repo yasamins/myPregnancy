@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/eatingstyle"
+    android:background="@drawable/articles_bkg"
     android:weightSum="1"
     tools:context="com.example.yasi27.final2.ArticlesActivity">
 

@@ -20,7 +20,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
 
     Button articles;
     Button weight;
-    Button bellyImage;
     Button calendar;
     Button heartRate;
 //    private int year, month, day;
@@ -42,8 +41,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
 
         articles = (Button)findViewById(R.id.articles);
         articles.setOnClickListener(this);
-        bellyImage = (Button)findViewById(R.id.bellyImage);
-        bellyImage.setOnClickListener(this);
         calendar = (Button)findViewById(R.id.calendar);
         calendar.setOnClickListener(this);
         weight = (Button)findViewById(R.id.weight);
@@ -84,11 +81,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 startActivity(readArticles);
                 break;
 
-            case R.id.bellyImage:
-                Intent takeBellyImage = new Intent("com.example.yasi27.final2.BellyImageActivity");
-                startActivity(takeBellyImage);
-                break;
-
             case R.id.heartRate:
                 Intent checkHeartRate = new Intent("com.example.yasi27.final2.HeartRateActivity");
                 startActivity(checkHeartRate);
@@ -105,26 +97,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 break;
         }
     }
-
-
-//    public void OnClickListener(){
-//
-//        articles = (Button)findViewById(R.id.articles);
-//        articles.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View v) {
-//                        Intent intent = new Intent("com.example.yasi27.final2.ArticlesActivity");
-//                        startActivity(intent);
-//                    }
-//                }
-//
-//        );
-//
-//
-//    }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
