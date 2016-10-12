@@ -16,10 +16,6 @@ import com.mbientlab.metawear.MetaWearBoard;
 import com.mbientlab.metawear.UnsupportedModuleException;
 import com.mbientlab.metawear.module.Led;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MWDeviceConfirmFragment extends DialogFragment {
 
     public interface DeviceConfirmCallback {

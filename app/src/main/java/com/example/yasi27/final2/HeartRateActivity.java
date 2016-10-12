@@ -1,6 +1,5 @@
 package com.example.yasi27.final2;
 
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothDevice;

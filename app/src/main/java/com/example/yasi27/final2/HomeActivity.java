@@ -6,13 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.os.Handler;
+import java.sql.SQLOutput;
 
-
-/**
- * Created by yasi27 on 26.9.2016.
- */
 public class HomeActivity extends Activity implements View.OnClickListener{
 
     public static final int WEEKS_IN_PREGNANCY = 40;
@@ -22,16 +20,12 @@ public class HomeActivity extends Activity implements View.OnClickListener{
     Button weight;
     Button calendar;
     Button heartRate;
-//    private int year, month, day;
-
-//    due date countdown
+    private int year, month, day;
     TextView countdown;
-    private TextView txtTimerDay, txtTimerHour, txtTimerMinute, txtTimerSecond;
-    private TextView tvEvent;
-    private Handler handler;
-    private Runnable runnable;
-
-
+    EditText editText;
+    private TextView dateView;
+    String username;
+    String duedate;
 
 
     @Override
@@ -47,11 +41,18 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         weight.setOnClickListener(this);
         heartRate = (Button)findViewById(R.id.heartRate);
         heartRate.setOnClickListener(this);
+
+        editText = (EditText)findViewById(R.id.editText);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        duedate = intent.getStringExtra("duedate");
+        System.out.println("username is " + username);
+        System.out.println("duedateis : "+ duedate);
+
 //
 //        Bundle extras = getIntent().getExtras();
 //        String newString = extras.getString("dDate");
 //        countdown.setText(newString);
-
 //
 //        countdown = (TextView)findViewById(R.id.countdown);
 //
@@ -65,13 +66,6 @@ public class HomeActivity extends Activity implements View.OnClickListener{
 //        String dateSet = dateData.getString("Date");
 //        countdown.setText(year +  month + day );
 //        OnClickListener();
-
-//        int day = extras.getInt("day");
-//        int month =extras.getInt("month");
-//        int year = extras.getInt("year");
-//        countdown.setText( new StringBuilder().append(day).append("/")
-//                .append(month).append("/").append(year));
-
 
     }
     public void onClick(View v){
@@ -92,8 +86,10 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                 break;
 
             case R.id.weight:
-                Intent writeWeight = new Intent ("com.example.yasi27.final2.WeightActivity");
-                startActivity(writeWeight);
+                Intent intentapn = new Intent("com.example.yasi27.final2.WeightActivity");
+                intentapn.putExtra("username", username);
+                intentapn.putExtra("duedate", duedate);
+                startActivity(intentapn);
                 break;
         }
     }

@@ -53,6 +53,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ArticlesActivity"
             android:label="final2">
@@ -62,15 +63,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BellyImageActivity"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.BellyImageActivity" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <!--<activity-->
+            <!--android:name=".BellyImageActivity"-->
+            <!--android:label="final2">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.example.yasi27.final2.BellyImageActivity" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
         <activity
             android:name=".CalendarActivity"
             android:label="final2">
@@ -80,6 +83,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".WeightActivity"
             android:label="final2">
@@ -89,6 +93,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".HeartRateActivity"
             android:label="final2"

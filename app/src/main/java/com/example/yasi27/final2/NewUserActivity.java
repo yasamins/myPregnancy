@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import java.util.Calendar;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -32,9 +31,8 @@ public class NewUserActivity extends AppCompatActivity
     private Calendar calendar;
     private TextView dateView;
     private int year, month, day;
-//    TextView countdown;
+    TextView countdown;
     Button button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +75,19 @@ public class NewUserActivity extends AppCompatActivity
 
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
+//                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
+//                        boolean isInserted = myDb.insertData(editText.getText().toString(), dateView.getText().toString());
+                        boolean isInserted = myDb.insertData(editText.getText().toString() , dateView.getText().toString() , "" , "");
+                        System.out.println("save result :" + isInserted);
                         String sUsername = editText.getText().toString();
                         String dDate = dateView.getText().toString();
                         if (sUsername.matches("") || dDate.matches("")) {
                             Toast.makeText(NewUserActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
                             return;
-
-
                         } else {
                             Toast.makeText(NewUserActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent("com.example.yasi27.final2.HomeActivity");
@@ -95,13 +95,11 @@ public class NewUserActivity extends AppCompatActivity
 //                            intent.putExtra("month", month);
 //                            intent.putExtra("year", year);
 //                            intent.putExtra("dDate", dDate);
+                            intent.putExtra("username", editText.getText().toString());
+                            intent.putExtra("duedate", dateView.getText().toString());
                             startActivity(intent);
                         }
 
-
-
-//                        now we put the insertData method here using the instance of the datahelper class and we will use boolean value because we used it for inserData method
-//                        boolean isInserted = myDb.inserData(editText.getText().toString(), dateView.getText().toString());
 //                        if (isInserted == true)
 //                            Toast.makeText(NewUserActivity.this,"Data has been saved", Toast.LENGTH_LONG).show();
 //                        else
@@ -110,7 +108,10 @@ public class NewUserActivity extends AppCompatActivity
 //                        startActivity(intent);
 //                        countdown.setText(year+"-"+month+"-"+day);
 
-                    }
+                        }
+
+
+
                 }
         );
     }

@@ -19,9 +19,6 @@ import com.mbientlab.metawear.module.Timer;
 import java.util.Arrays;
 import java.util.concurrent.CompletionService;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HeartRateSensorFragment extends Fragment {
 
     private MetaWearBoard metaWearBoard;

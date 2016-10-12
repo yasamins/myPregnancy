@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-/**
- * Created by yasi27 on 30.9.2016.
- */
 public class BellyImageActivity extends Activity {
 
     Button button4;

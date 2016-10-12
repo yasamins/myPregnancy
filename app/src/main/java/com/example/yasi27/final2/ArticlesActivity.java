@@ -14,9 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by yasi27 on 27.9.2016.
- */
 public class ArticlesActivity extends Activity {
     String[] articles = {
             "What to eat during pregnancy",

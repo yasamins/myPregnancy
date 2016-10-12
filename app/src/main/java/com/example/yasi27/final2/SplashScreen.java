@@ -32,12 +32,10 @@ public class SplashScreen extends AppCompatActivity {
                 Intent i = new Intent(SplashScreen.this, NewUserActivity.class);
                 startActivity(i);
 
-
                 // close this activity
                 finish();
             }
         }, SPLASH_TIME_OUT);
-
 
     }
 
