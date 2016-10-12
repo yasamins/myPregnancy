@@ -2,6 +2,7 @@ package com.example.yasi27.final2;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import java.util.Calendar;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     private int year, month, day;
 //    TextView countdown;
     Button button;
+    Cursor res2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +111,10 @@ public class MainActivity extends AppCompatActivity
                             intent.putExtra("username", editText.getText().toString());
                             intent.putExtra("duedate", dateView.getText().toString());
                             startActivity(intent);
+                            res2 = myDb.getAllData();
+                            System.out.println("THIS IS SPARTAAAAAAAAAAAAA /n/n/n/n");
+                            Toast.makeText(MainActivity.this, res2.toString(), Toast.LENGTH_LONG).show();
+//                            System.out.println(res2);
                         }
 //
 
@@ -177,6 +183,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.profile){
             return true;
         }
 

@@ -59,18 +59,21 @@ public class Weight extends Activity {
                     @Override
                     public void onClick(View v) {
                         myDb.insertWeight(username, preweight.getText().toString(), currentweight.getText().toString());
-//                        boolean isInserted = myDb.insertData(username,duedate,preweight.getText().toString(), currentweight.getText().toString());
-//                        System.out.println("the result is:" + isInserted);
+                        Intent intentweight = new Intent();
+                        intentweight.putExtra("username", preweight.getText().toString());
+                        intentweight.putExtra("duedate", currentweight.getText().toString());
+                        boolean isInserted = myDb.insertData(username,duedate,preweight.getText().toString(), currentweight.getText().toString());
+                        System.out.println("the result is:" + isInserted);
 //                        String pweight = preweight.getText().toString();
 //                        String cweight = currentweight.getText().toString();
-//                        if (pweight.matches("") || cweight.matches("")) {
-//                            Toast.makeText(Weight.this, "please fill in the blank part", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        } else {
-//                            Toast.makeText(Weight.this, "Your data has been saved", Toast.LENGTH_LONG).show();
-//
-//
-//                        }
+                        if (preweight == null || currentweight == null) {
+                            Toast.makeText(Weight.this, "please fill in the blank part", Toast.LENGTH_SHORT).show();
+                            return;
+                        } else {
+                            Toast.makeText(Weight.this, "Your data has been saved", Toast.LENGTH_LONG).show();
+
+
+                        }
                     }
 
                 });

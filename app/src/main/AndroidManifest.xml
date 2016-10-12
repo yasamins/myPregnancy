@@ -4,6 +4,9 @@
 
     <!--<uses-permission android:name="android.permission.CAMERA" />-->
     <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:allowBackup="true"
@@ -37,10 +40,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".bellysize"
+        <activity android:name=".Profile"
             android:label="final2">
             <intent-filter>
-                <action android:name="com.example.yasi27.final2.bellysize" />
+                <action android:name="com.example.yasi27.final2.Profile" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -53,6 +56,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".appointment"
+            android:label="final2">
+            <intent-filter>
+                <action android:name="com.example.yasi27.final2.appointment" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".Receiver" android:enabled="true">
+            <intent-filter> <action android:name="NOTIFICATION_SERVICE" /></intent-filter>
+        </service>
 
     </application>
 

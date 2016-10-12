@@ -6,31 +6,78 @@
     android:layout_height="match_parent"
     tools:context="com.example.yasi27.final2.appointment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Date"
-        android:id="@+id/date"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="151dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="614dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="384dp"
-        android:textSize="24sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/dateview2"
-        android:layout_alignBottom="@+id/date"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="76dp"
+        android:text="Time"
+        android:id="@+id/textView4"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="137dp"
-        android:layout_marginStart="207dp"
-        android:layout_alignStart="@+id/date" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="145dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="608dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="409dp"
+        android:textSize="28sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:id="@+id/textView5"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginTop="163dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="433dp"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_alignTop="@+id/textView4"
+        android:textSize="28sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editdate"
+        android:layout_marginEnd="84dp"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/edittime"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignEnd="@+id/editdate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remind Me"
+        android:id="@+id/reminder"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="184dp"
+        android:layout_marginEnd="119dp"
+        android:layout_below="@+id/editdate"
+        android:layout_marginTop="215dp"
+        android:textSize="20sp"
+        android:layout_alignEnd="@+id/info"
+        android:layout_toEndOf="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="63dp"
+        android:layout_alignTop="@+id/reminder"
+        android:layout_marginTop="142dp"
+        android:layout_alignEnd="@+id/editdate"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginStart="77dp"
+        android:textSize="20sp" />
 </RelativeLayout>

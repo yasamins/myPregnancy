@@ -38,12 +38,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bellysize"
-        android:background="@drawable/bellysizee"
-        android:layout_alignStart="@+id/notes"
-        android:layout_alignEnd="@+id/notes"
-        android:layout_alignTop="@+id/myweight"
-        android:layout_alignBottom="@+id/myweight" />
+        android:id="@+id/profile"
+        android:background="@drawable/prof"
+        android:onClick="profile"
+        android:layout_alignTop="@+id/countdown"
+        android:layout_marginBottom="316dp"
+        android:layout_marginEnd="77dp"
+        android:layout_above="@+id/weight"
+        android:layout_alignEnd="@+id/countdown"
+        android:layout_alignStart="@+id/countdown"
+        android:layout_marginStart="58dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -73,6 +77,17 @@
         android:layout_marginStart="58dp"
         android:layout_alignEnd="@+id/weight"
         android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ask"
+        android:id="@+id/askmydoc"
+        android:layout_alignStart="@+id/notes"
+        android:layout_alignEnd="@+id/notes"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65dp"
+        android:layout_alignTop="@+id/myweight" />
 
 
 </RelativeLayout>

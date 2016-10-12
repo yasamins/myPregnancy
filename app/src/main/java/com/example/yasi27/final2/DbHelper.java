@@ -2,15 +2,18 @@ package com.example.yasi27.final2;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by yasi27 on 6.10.2016.
  */
-public class DbHelper extends SQLiteOpenHelper{
+public class DbHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Mothers.db";
     public static final String TABLE_NAME = "mothers_table";
@@ -27,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        db.execSQL("create table " + TABLE_NAME + "(USERNAME TEXT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT) ");
+        db.execSQL("create table " + TABLE_NAME + "(USERNAME TEXT PRIMARY KEY AUTOINCREMENT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT) ");
 
 
     }
@@ -59,7 +62,22 @@ public class DbHelper extends SQLiteOpenHelper{
     void insertWeight(String username, String preweight, String currentweight) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("UPDATE " + TABLE_NAME + " SET PREWEIGHT='"+preweight+"',CURRENTWEIGHT='"+currentweight+"' WHERE USERNAME='"+username+"'; ");
+        db.execSQL("UPDATE " + TABLE_NAME + " SET PREWEIGHT='" + preweight + "',CURRENTWEIGHT='" + currentweight + "' WHERE USERNAME='" + username + "'; ");
     }
 
+    public Cursor getAllData() {
+//         we will create the instance of database
+        SQLiteDatabase db = this.getReadableDatabase();
+        //we should create an instance of the cursor
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
+//        System.out.println(res);
+        return res;
+
+
+    }
+
+
 }
+
+
+
