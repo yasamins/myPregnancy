@@ -65,13 +65,13 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
                 break;
 
             case R.id.profile:
-                Intent i = new Intent("com.example.yasi27.final2.Profile");
-                startActivity(i);
+//                Intent i = new Intent("com.example.yasi27.final2.Profile");
+//                startActivity(i);
 //                i.putExtra("username", username);
 //                i.putExtra("duedate", duedate);
-                Cursor res = myDb.getAllData();
+                Cursor res = myDb.getAllData(username);
                 if (res.getCount() == 0) {
-                    showMessage("Error", "No Data to show");
+                    showMessage("Error", "No Info to show");
 
 //                    return;
 
@@ -86,7 +86,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
                     }
 
 
-                    showMessage("Data", buffer.toString());
+                    showMessage("Profile", buffer.toString());
                     break;
                 }
 
@@ -115,6 +115,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener{
         builder.setTitle(title);
         builder.setMessage(Message);
         builder.show();
+
     }
 
     @Override

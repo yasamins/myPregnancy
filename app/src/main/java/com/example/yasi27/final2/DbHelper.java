@@ -30,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        db.execSQL("create table " + TABLE_NAME + "(USERNAME TEXT PRIMARY KEY AUTOINCREMENT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT) ");
+        db.execSQL("create table " + TABLE_NAME + "(USERNAME TEXT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT), PRIMARY KEY(USERNAME) ");
 
 
     }
@@ -65,11 +65,11 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("UPDATE " + TABLE_NAME + " SET PREWEIGHT='" + preweight + "',CURRENTWEIGHT='" + currentweight + "' WHERE USERNAME='" + username + "'; ");
     }
 
-    public Cursor getAllData() {
+    public Cursor getAllData(String username) {
 //         we will create the instance of database
         SQLiteDatabase db = this.getReadableDatabase();
         //we should create an instance of the cursor
-        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " WHERE USERNAME= '" + username + "'; ", null);
 //        System.out.println(res);
         return res;
 

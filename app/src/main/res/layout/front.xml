@@ -13,55 +13,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/notes"
-        android:layout_marginStart="126dp"
-        android:layout_marginBottom="225dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="245dp"
         android:layout_marginTop="510dp"
         android:background="@drawable/note"
-        android:layout_marginEnd="207dp"
+        android:layout_marginEnd="208dp"
         android:text="     "
-        android:layout_alignEnd="@+id/weight"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/weight" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/weight"
-        android:layout_marginStart="338dp"
         android:background="@drawable/heartrate"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/notes"
         android:layout_alignBottom="@+id/notes"
+        android:layout_alignTop="@+id/notes"
+        android:layout_alignStart="@+id/myweight"
         android:layout_alignEnd="@+id/myweight" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/profile"
-        android:background="@drawable/prof"
+        android:background="@drawable/pro"
         android:onClick="profile"
-        android:layout_alignTop="@+id/countdown"
-        android:layout_marginBottom="316dp"
-        android:layout_marginEnd="77dp"
-        android:layout_above="@+id/weight"
-        android:layout_alignEnd="@+id/countdown"
+        android:layout_marginEnd="49dp"
         android:layout_alignStart="@+id/countdown"
-        android:layout_marginStart="58dp" />
+        android:layout_marginStart="58dp"
+        android:layout_toStartOf="@+id/weight"
+        android:layout_alignBottom="@+id/myweight"
+        android:layout_marginBottom="56dp"
+        android:layout_alignTop="@+id/notes"
+        android:layout_marginTop="53dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/myweight"
         android:background="@drawable/scale2"
-        android:layout_marginEnd="173dp"
-        android:layout_marginStart="338dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginStart="395dp"
         android:layout_marginTop="51dp"
-        android:layout_marginBottom="81dp"
+        android:layout_marginBottom="72dp"
         android:layout_below="@+id/weight"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true" />
 
 
 
@@ -83,11 +83,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ask"
         android:id="@+id/askmydoc"
-        android:layout_alignStart="@+id/notes"
-        android:layout_alignEnd="@+id/notes"
+        android:layout_alignTop="@+id/myweight"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="65dp"
-        android:layout_alignTop="@+id/myweight" />
+        android:layout_marginBottom="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="96dp"
+        android:layout_toStartOf="@+id/profile"
+        android:layout_alignEnd="@+id/notes" />
 
 
 </RelativeLayout>
