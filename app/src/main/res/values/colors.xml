@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#f7cac9</color>
-    <color name="colorPrimaryDark">#F06292</color>
-    <color name="colorAccent">#92a8d1</color>
-    <!--metawear-->
+    <!--<color name="colorPrimary">#f7cac9</color>-->
+    <!--<color name="colorPrimaryDark">#F06292</color>-->
+    <!--<color name="colorAccent">#92a8d1</color>-->
+
+    <color name="colorPrimary">#9EBDFE</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
     <color name="colorBackground">#0d0d0d</color>
     <color name="buttonTextColor">#FF3b30</color>
     <color name="infoTextColor">#FFFFFF</color>

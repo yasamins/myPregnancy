@@ -81,9 +81,9 @@ public class HomeActivity extends Activity implements View.OnClickListener{
 //                startActivity(i);
 //                i.putExtra("username", username);
 //                i.putExtra("duedate", duedate);
-                Cursor res = myDb.getAllData();
+                Cursor res = myDb.getAllData(username);
                 if (res.getCount() == 0) {
-                    showMessage("Error", "No Data to show");
+                    showMessage("Error", "No Info to show");
 
 //                    return;
 
@@ -98,7 +98,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
                     }
 
 
-                    showMessage("Data", buffer.toString());
+                    showMessage("Profile", buffer.toString());
                 }
                 break;
 
@@ -127,6 +127,7 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         builder.setTitle(title);
         builder.setMessage(Message);
         builder.show();
+
     }
 
     @Override

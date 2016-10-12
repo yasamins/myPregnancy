@@ -100,9 +100,9 @@ public class NewUserActivity extends AppCompatActivity
                             intent.putExtra("username", editText.getText().toString());
                             intent.putExtra("duedate", dateView.getText().toString());
                             startActivity(intent);
-                            res2 = myDb.getAllData();
-                            System.out.println("THIS IS SPARTAAAAAAAAAAAAA /n/n/n/n");
-                            Toast.makeText(NewUserActivity.this, res2.toString(), Toast.LENGTH_LONG).show();
+                            //res2 = myDb.getAllData();
+                            //System.out.println("THIS IS SPARTAAAAAAAAAAAAA /n/n/n/n");
+                            //Toast.makeText(MainActivity.this, res2.toString(), Toast.LENGTH_LONG).show();
 //                            System.out.println(res2);
                         }
 
