@@ -1,96 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/home_bkg"
     tools:context="com.example.yasi27.final2.HomeActivity">
 
 
-    <LinearLayout
-        android:orientation="vertical"
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/articles"
+        android:layout_marginStart="126dp"
+        android:layout_marginBottom="225dp"
+        android:layout_marginTop="510dp"
+        android:background="@drawable/note_button"
+        android:layout_marginEnd="207dp"
+        android:layout_alignEnd="@+id/heart_rate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/heart_rate"
+        android:layout_marginStart="338dp"
+        android:background="@drawable/heart_rate_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/articles"
+        android:layout_alignBottom="@+id/articles"
+        android:layout_alignEnd="@+id/myweight" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile"
+        android:background="@drawable/prof"
+        android:layout_alignTop="@+id/countdown"
+        android:layout_marginBottom="316dp"
+        android:layout_marginEnd="77dp"
+        android:layout_above="@+id/heart_rate"
+        android:layout_alignEnd="@+id/countdown"
+        android:layout_alignStart="@+id/countdown"
+        android:layout_marginStart="58dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myweight"
+        android:background="@drawable/scale_button"
+        android:layout_marginEnd="173dp"
+        android:layout_marginStart="338dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="81dp"
+        android:layout_below="@+id/heart_rate"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/countdown"
+        android:layout_marginTop="58dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/heart_rate"
+        android:layout_marginBottom="372dp"
+        android:layout_alignStart="@+id/articles"
+        android:layout_marginStart="58dp"
+        android:layout_alignEnd="@+id/heart_rate"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:text="There Are"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:id="@+id/dayCountDown1"
-            android:textAlignment="center"
-            android:textSize="60sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/countdown"
-            android:textStyle="bold"
-            android:layout_marginBottom="34dp"
-            android:text="12"
-            android:textAlignment="center"
-            android:textSize="60sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Days Left"
-            android:id="@+id/dayCountDown2"
-            android:textSize="60sp"
-            android:layout_marginEnd="73dp"
-            android:layout_marginBottom="12dp"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/heartRate"
-                    android:background="@drawable/heart_rate_button"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/weight"
-                    android:background="@drawable/scale_button"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/calendar"
-                    android:background="@drawable/calendar_button"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/articles"
-                    android:background="@drawable/note_button"
-                    android:layout_weight="1" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ask"
+        android:id="@+id/askmydoc"
+        android:layout_alignStart="@+id/articles"
+        android:layout_alignEnd="@+id/articles"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65dp"
+        android:layout_alignTop="@+id/myweight" />
 
 
 </RelativeLayout>

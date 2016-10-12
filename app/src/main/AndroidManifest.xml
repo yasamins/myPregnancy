@@ -13,6 +13,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -79,6 +80,14 @@
             android:label="final2">
             <intent-filter>
                 <action android:name="com.example.yasi27.final2.CalendarActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Profile"
+            android:label="final2">
+            <intent-filter>
+                <action android:name="com.example.yasi27.final2.Profile" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -104,6 +113,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".AppointmentActivity"
+            android:label="final2">
+            <intent-filter>
+                <action android:name="com.example.yasi27.final2.AppointmentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".Receiver" android:enabled="true">
+            <intent-filter> <action android:name="NOTIFICATION_SERVICE" /></intent-filter>
+        </service>
 
     </application>
 

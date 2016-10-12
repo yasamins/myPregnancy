@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class WeightActivity extends Activity {
 
@@ -56,18 +57,21 @@ public class WeightActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         myDb.insertWeight(username, preweight.getText().toString(), currentweight.getText().toString());
-//                        boolean isInserted = myDb.insertData(username,duedate,preweight.getText().toString(), currentweight.getText().toString());
-//                        System.out.println("the result is:" + isInserted);
-//                        String pweight = preweight.getText().toString();
-//                        String cweight = currentweight.getText().toString();
-//                        if (pweight.matches("") || cweight.matches("")) {
-//                            Toast.makeText(WeightActivity.this, "please fill in the blank part", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        } else {
-//                            Toast.makeText(WeightActivity.this, "Your data has been saved", Toast.LENGTH_LONG).show();
-//
-//
-//                        }
+                        Intent intentweight = new Intent();
+                        intentweight.putExtra("username", preweight.getText().toString());
+                        intentweight.putExtra("duedate", currentweight.getText().toString());
+                        boolean isInserted = myDb.insertData(username,duedate,preweight.getText().toString(), currentweight.getText().toString());
+                        System.out.println("the result is:" + isInserted);
+                        String pweight = preweight.getText().toString();
+                        String cweight = currentweight.getText().toString();
+                        if (pweight == null || cweight == null) {
+                            Toast.makeText(WeightActivity.this, "please fill in the blank part", Toast.LENGTH_SHORT).show();
+                            return;
+                        } else {
+                            Toast.makeText(WeightActivity.this, "Your data has been saved", Toast.LENGTH_LONG).show();
+
+
+                        }
                     }
 
                 });

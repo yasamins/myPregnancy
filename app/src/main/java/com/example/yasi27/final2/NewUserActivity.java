@@ -3,6 +3,7 @@ package com.example.yasi27.final2;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import java.util.Calendar;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ import android.widget.Toast;
 public class NewUserActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    DatabaseHelper myDb;
+    DbHelper myDb;
     EditText editText;
     Button start;
     private DatePicker datePicker;
@@ -33,12 +34,13 @@ public class NewUserActivity extends AppCompatActivity
     private int year, month, day;
     TextView countdown;
     Button button;
+    Cursor res2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDb = new DatabaseHelper(this);
+        myDb = new DbHelper(this);
         //its going to call the constructor of this databasehelper class and in the contructor we are creating the database and the tables
         OnClickListener();
 
@@ -98,6 +100,10 @@ public class NewUserActivity extends AppCompatActivity
                             intent.putExtra("username", editText.getText().toString());
                             intent.putExtra("duedate", dateView.getText().toString());
                             startActivity(intent);
+                            res2 = myDb.getAllData();
+                            System.out.println("THIS IS SPARTAAAAAAAAAAAAA /n/n/n/n");
+                            Toast.makeText(NewUserActivity.this, res2.toString(), Toast.LENGTH_LONG).show();
+//                            System.out.println(res2);
                         }
 
 //                        if (isInserted == true)
@@ -176,6 +182,10 @@ public class NewUserActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (id == R.id.profile){
             return true;
         }
 
