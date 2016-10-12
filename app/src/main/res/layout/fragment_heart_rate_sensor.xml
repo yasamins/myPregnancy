@@ -30,7 +30,7 @@
             android:layout_height="65dp"
             android:layout_alignParentLeft="true"
             android:focusableInTouchMode="false"
-            android:src="@drawable/metawear_board" />
+            android:src="@drawable/heart_rate_sensor" />
 
 
         <TextView
@@ -45,7 +45,8 @@
             android:paddingLeft="11dp"
             android:paddingTop="0dp"
             android:text="@string/metawear"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textColor="#666666" />
 
         <TextView
             android:id="@+id/connection_status"
@@ -56,7 +57,8 @@
             android:layout_toEndOf="@+id/mw_board_icon"
             android:paddingLeft="11dp"
             android:paddingTop="4dp"
-            android:text="@string/no_metawear_connected" />
+            android:text="@string/no_metawear_connected"
+            android:textColor="#666666" />
 
     </RelativeLayout>
 
@@ -87,9 +89,10 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/heart_rate"
         android:textAlignment="center"
-        android:textAppearance="@style/heartRateTitle" />
+        android:textAppearance="@style/heartRateTitle"
+        android:textColor="#666666" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/heart_icon"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -97,7 +100,9 @@
         android:layout_gravity="center"
         android:layout_weight=".46"
         android:focusableInTouchMode="false"
-        android:src="@drawable/heart_rate_bkg" />
+        android:src="@drawable/heart_rate_bkg"
+        android:background="@null"
+        android:scaleType="fitCenter"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,31 +111,23 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"></TextView>
-
-        <TextView
             android:id="@+id/bpm"
             style="@style/heartRateValue"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".4"
+            android:layout_weight="0.5"
             android:gravity="center"
-            android:text="60" />
+            android:text="60"
+            android:textColor="#666666" />
 
         <TextView
             style="@style/heartRateBPM"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".4"
+            android:layout_weight="0.5"
             android:gravity="center"
-            android:text="bpm" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"></TextView>
+            android:text="bpm"
+            android:textColor="#666666" />
 
     </LinearLayout>
 

@@ -201,6 +201,7 @@ public class HeartRateSensorFragment extends Fragment {
     };
 
     public boolean startSensor(MetaWearBoard metaWearBoard) {
+        Log.i("startSensor", "Starting sensor");
         this.metaWearBoard = metaWearBoard;
         initializeCounters();
 
@@ -213,7 +214,17 @@ public class HeartRateSensorFragment extends Fragment {
 
         gpio.routeData().fromAnalogIn(GPIO_PIN, Gpio.AnalogReadMode.ADC).stream(HEART_RATE)
                 .commit().onComplete(gpioHandler);
+        //I made changes here:
+        gpio.clearDigitalOut(POWER_PIN);
         return true;
+    }
+
+    public void stopSensor() {
+        if (gpio != null) {
+            Log.i("stopSensor", "Stopping sensor");
+//            gpio.routeData().fromAnalogIn(GPIO_PIN, Gpio.AnalogReadMode.ADC);
+            gpio.setDigitalOut(POWER_PIN);
+        }
     }
 
 }

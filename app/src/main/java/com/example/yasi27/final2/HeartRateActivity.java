@@ -20,6 +20,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.mbientlab.bletoolbox.scanner.BleScannerFragment;
@@ -41,18 +44,24 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
     private SharedPreferences sharedPreferences;
     private Editor editor;
     private HeartRateSensorFragment heartRateSensorFragment;
+    private boolean connected = false;
+    private boolean measuringHeartRate = false;
     private boolean reconnecting = false;
     private final String HEART_RATE_SENSOR_FRAGMENT_KEY = "heart_rate_sensor_key";
     private final String MAC_ADDRESS = "MAC_ADDRESS";
+    private ImageButton heartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heart_rate);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        heartButton = (ImageButton) findViewById(R.id.heart_icon);
+        heartButton.setOnClickListener(heartRateButtonListener);
         setSupportActionBar(toolbar);
         sharedPreferences = getApplicationContext().getSharedPreferences("com.example.yasi27.final2", 0); // 0 - for private mode
         editor = sharedPreferences.edit();
+        connected = false;
 
         if (savedInstanceState == null) {
             heartRateSensorFragment = new HeartRateSensorFragment();
@@ -218,7 +227,7 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
 
     public void pairDevice() {
         setStatusToConnected();
-        heartRateSensorFragment.startSensor(mwBoard);
+//        heartRateSensorFragment.startSensor(mwBoard);
     }
 
     public void dontPairDevice() {
@@ -256,7 +265,7 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
         connectMenuItem.setTitle(R.string.disconnect);
         TextView connectionStatus = (TextView) findViewById(R.id.connection_status);
         connectionStatus.setText(getText(R.string.metawear_connected));
-
+        connected = true;
     }
 
     private void setStatusToDisconnected() {
@@ -268,8 +277,28 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
         editor.apply();
         editor.commit();
         reconnecting = false;
+        connected = false;
     }
 
+    private View.OnClickListener heartRateButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Log.i("Heart button", "Button clicked");
+            if (!connected) {
+                Log.i("Heart button", "Metawear not connected");
+                return;
+            }
+            if (!measuringHeartRate) {
+                Log.i("Heart button", "Starting sensor");
+                heartRateSensorFragment.startSensor(mwBoard);
+                measuringHeartRate = true;
+            } else {
+                Log.i("Heart button", "Stopping sensor");
+                heartRateSensorFragment.stopSensor();
+                measuringHeartRate = false;
+            }
+        }
+    };
 
     /**
      * connection handlers
@@ -297,7 +326,7 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
                                   }
                               }
                 );
-                heartRateSensorFragment.startSensor(mwBoard);
+//                heartRateSensorFragment.startSensor(mwBoard);
                 reconnecting = false;
             }
 
@@ -305,7 +334,7 @@ public class HeartRateActivity extends AppCompatActivity implements ServiceConne
 
         @Override
         public void disconnected() {
-            Log.i("Metawear Controler", "Device Disconnected");
+            Log.i("Metawear Controller", "Device Disconnected");
             if (reconnecting) {
                 mwBoard.connect();
             }
