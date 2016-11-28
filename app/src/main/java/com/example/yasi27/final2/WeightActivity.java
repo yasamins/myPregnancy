@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class WeightActivity extends Activity {
 
-    DatabaseHelper myDb;
+    DbHelper myDb;
     Button save;
     Button cancel;
     EditText startdate;
@@ -29,7 +29,7 @@ public class WeightActivity extends Activity {
         duedate = intentapn.getStringExtra("duedate");
         System.out.println("username  " + username);
         System.out.println("duedate : "+ duedate);
-        myDb = new DatabaseHelper(this);
+        myDb = new DbHelper(this);
         OnClickListener();
 
         preweight = (EditText) findViewById(R.id.preweight);
@@ -56,21 +56,13 @@ public class WeightActivity extends Activity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        myDb.insertWeight(username, preweight.getText().toString(), currentweight.getText().toString());
-                        Intent intentweight = new Intent();
-                        intentweight.putExtra("username", preweight.getText().toString());
-                        intentweight.putExtra("duedate", currentweight.getText().toString());
-                        boolean isInserted = myDb.insertData(username,duedate,preweight.getText().toString(), currentweight.getText().toString());
-                        System.out.println("the result is:" + isInserted);
                         String pweight = preweight.getText().toString();
                         String cweight = currentweight.getText().toString();
-                        if (pweight == null || cweight == null) {
+                        if ("".equals(pweight) || "".equals(cweight)) {
                             Toast.makeText(WeightActivity.this, "please fill in the blank part", Toast.LENGTH_SHORT).show();
-                            return;
                         } else {
+                            myDb.insertWeight(username, pweight, cweight);
                             Toast.makeText(WeightActivity.this, "Your data has been saved", Toast.LENGTH_LONG).show();
-
-
                         }
                     }
 

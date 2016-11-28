@@ -2,13 +2,9 @@ package com.example.yasi27.final2;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import java.util.List;
-import java.util.Set;
 
 /**
  * Created by yasi27 on 6.10.2016.
@@ -30,16 +26,19 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        db.execSQL("create table " + TABLE_NAME + "(USERNAME TEXT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT), PRIMARY KEY(USERNAME) ");
+        db.execSQL("create table " + TABLE_NAME + " (USERNAME TEXT, DUEDATE TEXT, PREWEIGHT TEXT, CURRENTWEIGHT TEXT, PRIMARY KEY(USERNAME) )");
 
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
 
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onCreate(db);
     }
 
     public boolean insertData(String username, String duedate, String preweight, String currentweight) {
