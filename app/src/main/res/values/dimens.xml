@@ -12,4 +12,5 @@
     <dimen name="metawear_connection_status_text_size">16dp</dimen>
     <dimen name="metawear_heart_rate_value">60dp</dimen>
     <dimen name="metawear_heart_rate_bpm_label">37dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>

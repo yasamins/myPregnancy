@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yasi27.final2">
+    package="com.example.pregnancyTracker.v1">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <!-- Extra feature -->
-    <uses-permission android:name="android.permission.call_phone" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -24,7 +17,7 @@
         <service android:name="com.mbientlab.metawear.MetaWearBleService" />
 
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.pregnancyTracker.SplashScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,7 +28,7 @@
         </activity>
 
         <activity
-            android:name=".NewUserActivity"
+            android:name="com.example.pregnancyTracker.NewUserActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -46,85 +39,26 @@
         </activity>
 
         <activity
-            android:name=".HomeActivity"
-            android:label="final2">
+            android:name="com.example.pregnancyTracker.HomeActivity"
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="com.example.yasi27.final2.HomeActivity" />
+                <action android:name="com.example.pregnancyTracker.HomeActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
 
         <activity
-            android:name=".ArticlesActivity"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.ArticlesActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!--<activity-->
-            <!--android:name=".BellyImageActivity"-->
-            <!--android:label="final2">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.example.yasi27.final2.BellyImageActivity" />-->
-
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
-
-        <activity
-            android:name=".CalendarActivity"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.CalendarActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Profile"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.Profile" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".WeightActivity"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.WeightActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".HeartRateActivity"
+            android:name="com.example.pregnancyTracker.HeartRateSensor.HeartRateActivity"
             android:label="final2"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="com.example.yasi27.final2.HeartRateActivity" />
+                <action android:name="com.example.pregnancyTracker.HeartRateActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppointmentActivity"
-            android:label="final2">
-            <intent-filter>
-                <action android:name="com.example.yasi27.final2.AppointmentActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <service android:name=".Receiver" android:enabled="true">
-            <intent-filter> <action android:name="NOTIFICATION_SERVICE" /></intent-filter>
-        </service>
 
     </application>
 

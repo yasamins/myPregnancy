@@ -1,87 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
-    android:background="@drawable/home_bkg"
-    tools:context="com.example.yasi27.final2.HomeActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.pregnancyTracker.HomeActivity">
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/articles"
-        android:background="@drawable/note_button"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="229dp"
-        android:layout_marginTop="510dp"
-        android:layout_marginEnd="208dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/heart_rate"
-        android:layout_alignParentBottom="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/heart_rate_button"
-        android:id="@+id/heart_rate"
-        android:layout_alignBottom="@+id/articles"
-        android:layout_alignTop="@+id/articles"
-        android:layout_alignStart="@+id/myweight"
-        android:layout_alignEnd="@+id/myweight" />
-
-        <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/myweight"
-        android:background="@drawable/scale_button"
-        android:layout_marginEnd="107dp"
-        android:layout_marginStart="395dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginBottom="72dp"
-        android:layout_below="@+id/heart_rate"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true" />
-
-
-
-    <TextView
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/countdown"
-        android:layout_marginTop="58dp"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/heart_rate"
-        android:layout_marginBottom="372dp"
-        android:layout_alignStart="@+id/articles"
-        android:layout_marginStart="58dp"
-        android:layout_alignEnd="@+id/heart_rate"
-        android:textStyle="bold"/>
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ask"
-        android:id="@+id/askmydoc"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="79dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="96dp"
-        android:layout_toStartOf="@+id/profile"
-        android:layout_alignEnd="@+id/articles"
-        android:layout_alignTop="@+id/myweight" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/profile"
-            android:background="@drawable/pro"
-            android:layout_below="@+id/heart_rate"
-            android:layout_centerHorizontal="true" />
+        </android.support.v7.widget.Toolbar>
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

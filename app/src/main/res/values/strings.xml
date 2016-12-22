@@ -1,18 +1,17 @@
 <resources>
     <string name="app_name">Pregnancy Tracker</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="date_button_set">Due Date</string>
+    <!--Splash Screen-->
+    <string name="welcome">Welcome</string>
 
-    <!--<string name="date_view_set"></string>-->
-    <string name="date_selected"></string>
-    <string name="date_label_set"></string>
+    <!--New User Activity-->
+    <string name="pick_a_due_date">Pick a Due Date</string>
+    <string name="get_started">Get started</string>
 
-    <string name="countdown">There are only</string>
-    <string name="countdownleft">till Due Date!</string>
-
-    <string name="action_settings">Settings</string>
+    <!--Weight portfolio recycler view item-->
+    <string name="date">date</string>
+    <string name="time">time</string>
+    <string name="measures">measures</string>
 
     <!--Paring device-->
     <string name="pairing_title">Pair Device</string>
@@ -20,8 +19,7 @@
     <string name="dialog_no">No</string>
     <string name="dialog_yes">Yes</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <!--Heart rate sensor part-->
     <string name="metawear">MetaWear</string>
     <string name="no_metawear_connected">No Metawear Connected</string>
     <string name="metawear_connected">Metawear Connected</string>
@@ -36,6 +34,7 @@
     <string name="toast_disconnected">MetaWear Disconnected</string>
     <string name="pairing_text">Do you see a blinking blue LED on the MetaWear?</string>
     <string name="error_soft_reset">Error resetting board</string>
-    <string name="title_activity_splash_screen">SplashScreen</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>

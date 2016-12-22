@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yasi27.final2.MWDeviceConfrimFragment">
+    tools:context="com.example.pregnancyTracker.v1.MWDeviceConfrimFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

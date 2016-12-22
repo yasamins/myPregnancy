@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.example.yasi27.final2"
+        applicationId "com.example.pregnancyTracker.v1"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
@@ -28,4 +29,5 @@ dependencies {
     compile 'com.mbientlab:metawear:2.4.0'
     compile 'com.mbientlab.bletoolbox:scanner:0.2.0'
     testCompile 'junit:junit:4.12'
+    compile 'joda-time:joda-time:2.9.4'
 }
