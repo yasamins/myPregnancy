@@ -8,22 +8,25 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/day_count_down"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_weight="1" />
+            android:padding="20dp"
+            android:background="@color/profile"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/days_left"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_list_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:layout_weight="3" />
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
 
@@ -32,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        app:srcCompat="@android:drawable/ic_input_add"
+        app:srcCompat="@drawable/ic_add_white_24dp"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_alignParentBottom="true"

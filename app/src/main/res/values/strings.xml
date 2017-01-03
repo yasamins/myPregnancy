@@ -36,5 +36,9 @@
     <string name="error_soft_reset">Error resetting board</string>
 
     <string name="action_settings">Settings</string>
+    <string name="days_left">"%d days to due date"</string>
+    <string name="insert_your_weight">Insert your weight</string>
+    <string name="add_weight">Add weight</string>
+    <string name="unit">kg</string>
 
 </resources>

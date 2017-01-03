@@ -39,8 +39,8 @@ public class WeightRecyclerViewAdapter extends RecyclerView.Adapter<WeightRecycl
         String date = dateFormat.format(dateObject);
 
         holder.date.setText(date);
-        holder.measures.setText(entry.getWeight());
-        holder.unit.setText("kg");
+        holder.measures.setText(Integer.toString(entry.getWeight()));
+        holder.unit.setText(R.string.unit);
     }
 
     @Override

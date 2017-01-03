@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pregnancyTracker.Model.User;
+import com.example.pregnancyTracker.v1.R;
 
 import io.realm.Realm;
 
@@ -31,7 +32,10 @@ public class NewUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_user);
+
+        // Making notification bar transparent
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         dueDate = null;
 
@@ -61,6 +65,7 @@ public class NewUserActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(NewUserActivity.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -86,16 +91,24 @@ public class NewUserActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener myDateListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(android.widget.DatePicker picker, int year, int month, int day) {
-            Calendar calendar = new GregorianCalendar();
-            calendar.set(Calendar.YEAR, year);
-            calendar.set(Calendar.MONTH, month);
-            calendar.set(Calendar.DAY_OF_MONTH, day);
+            Calendar dueDate = new GregorianCalendar();
+            dueDate.set(Calendar.YEAR, year);
+            dueDate.set(Calendar.MONTH, month);
+            dueDate.set(Calendar.DAY_OF_MONTH, day);
 
-            if (calendar.before(Calendar.getInstance())) {
+            Calendar now = Calendar.getInstance();
+
+            Calendar maxDueDate = Calendar.getInstance();
+            maxDueDate.add(Calendar.DAY_OF_YEAR, 294);
+
+            if (dueDate.before(now)) {
                 // Due date should be in the future
                 Toast.makeText(NewUserActivity.this, "Due date needs to be in the future", Toast.LENGTH_SHORT).show();
+            } else if (dueDate.after(maxDueDate)) {
+                // Due date is too late
+                Toast.makeText(NewUserActivity.this, "The maximum pregnancy is 42 weeks", Toast.LENGTH_SHORT).show();
             } else {
-                Date date = calendar.getTime();
+                Date date = dueDate.getTime();
                 setDueDate(date);
             }
         }
@@ -103,7 +116,7 @@ public class NewUserActivity extends AppCompatActivity {
 
     private void setDueDate(Date date) {
         dueDate = date;
-        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy", Locale.US);
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
         dueDateText.setText(format.format(date));
 
         // Enable start button
